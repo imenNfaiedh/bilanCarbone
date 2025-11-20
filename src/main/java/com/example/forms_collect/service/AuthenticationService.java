@@ -37,7 +37,7 @@ public class AuthenticationService {
                 .setFullName(input.getFullName())
                 .setEmail(input.getEmail())
                 .setPassword(passwordEncoder.encode(input.getPassword()))
-                .setRole(UserRole.USER)       // 👉 assigner un rôle par défaut
+                .setRole(UserRole.USER)
                 .setEnabled(true)
                 .setExpired(false);
 
@@ -56,11 +56,11 @@ public class AuthenticationService {
                 )
         );
 
-        // Récupère l’utilisateur depuis la base
+        // Récupère user
         User user = userRepository.findByEmail(input.getEmail())
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
-        // Génère un JWT
+
         return jwtService.generateToken(user);
     }
 }
