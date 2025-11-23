@@ -35,7 +35,7 @@ public class SecurityConfiguration {
         http
                 .csrf(csrf -> csrf.disable())  // ✅ nouvelle syntaxe
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/**", "/companies/**","/evocations/**","/combustibles/**").permitAll()
+                        .requestMatchers("/auth/**", "/companies/**","/evocations/**","/combustibles/**","/monthly-data/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session ->
