@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("monthly-data")
+@RequestMapping("/monthly-data")
 public class MonthlyDataController {
 
     private final IMonthlyDataService service;
@@ -22,8 +22,8 @@ public class MonthlyDataController {
         service.saveMonthlyData(monthlyData);
     }
 
-    @GetMapping("/{combustibleId}")
-    public List<MonthlyData> getMonthlyData(@PathVariable Long combustibleId) {
-        return service.getMonthlyDataByCombustible(combustibleId);
-    }
+//    @GetMapping("/{combustibleId}")
+//    public List<MonthlyData> getMonthlyData(@PathVariable Long combustibleId) {
+//        return service.getMonthlyDataByCombustible(combustibleId);
+//    }
 }
