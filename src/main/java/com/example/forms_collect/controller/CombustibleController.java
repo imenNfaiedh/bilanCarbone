@@ -17,7 +17,6 @@ public class CombustibleController {
         this.combustibleService = combustibleService;
     }
 
-    // Endpoint pour créer un combustible
     @PostMapping
     public CombustibleDto createCombustible(@RequestBody CombustibleDto combustibleDto) {
         return combustibleService.saveCombustible(combustibleDto);

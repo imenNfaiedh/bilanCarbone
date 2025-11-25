@@ -9,7 +9,12 @@ import java.util.Map;
 @AllArgsConstructor
 @NoArgsConstructor
 public class MonthlyDataDto {
-    private Long combustibleId;
-    private Map<String, Double> monthlyData; // {"Janvier": 100, "Février": 120, ...}
+    private Long id;
+    private String mois;
+    private Double quantite;
+    private String type;
+
+
+
 }
 

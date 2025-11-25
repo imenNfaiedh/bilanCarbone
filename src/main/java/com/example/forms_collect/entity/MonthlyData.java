@@ -15,6 +15,7 @@ public class MonthlyData {
     private Long id;
     private String mois;
     private Double quantite;
+    private String type;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "combustible_id")

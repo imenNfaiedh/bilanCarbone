@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -23,6 +24,6 @@ public class Combustible {
     private boolean monthlyMonitoring;
 
     @OneToMany(mappedBy = "combustible", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<MonthlyData> donneesMensuelles;
+    private List<MonthlyData> donneesMensuelles=new ArrayList<>();
 
 }

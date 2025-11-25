@@ -12,7 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-
 @Service
 public class VehicleService implements IVehicleService {
 
@@ -46,3 +45,4 @@ public class VehicleService implements IVehicleService {
         return vehicleMapper.toDto(saved);
     }
 }
+

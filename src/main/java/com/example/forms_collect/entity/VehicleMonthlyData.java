@@ -15,9 +15,9 @@ public class VehicleMonthlyData {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String month;      // Month name (January, February, ...)
-    private Double quantity;   // Monthly consumption
-    private String fuelType;   // Fuel type (Gasoline, Diesel, etc.)
+    private String month;
+    private Double quantity;
+    private String fuelType;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "vehicle_id")
