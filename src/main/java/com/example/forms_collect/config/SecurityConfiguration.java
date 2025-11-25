@@ -42,7 +42,10 @@ public class SecurityConfiguration {
                                         "/combustibles/**",
                                         "/vehicles/**",
                                         "/froid-bilan-matiere/**",
-                                        "/froid-equipement/**"
+                                        "/froid-equipement/**",
+                                        "/production-waste/**",
+                                        "/packaging-material/**",
+                                        "/packaging-delivered/**"
 
 
                                 ).permitAll()
