@@ -17,7 +17,7 @@ public class CompanyController {
     @Autowired
     private ICompanyService companyService;
 
-    // Ajouter une nouvelle société
+
     @PostMapping
     public ResponseEntity<CompanyDto> addCompany(@RequestBody CompanyDto companyDto) {
         CompanyDto savedCompany = companyService.saveCompany(companyDto);

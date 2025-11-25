@@ -39,9 +39,11 @@ public class SecurityConfiguration {
                                         "/auth/**",
                                         "/companies/**",
                                         "/evocations/**",
-                                        "/monthly-data/**",
                                         "/combustibles/**",
-                                        "/vehicles/**"
+                                        "/vehicles/**",
+                                        "/froid-bilan-matiere/**",
+                                        "/froid-equipement/**"
+
 
                                 ).permitAll()
 //                .authorizeHttpRequests(auth -> auth
