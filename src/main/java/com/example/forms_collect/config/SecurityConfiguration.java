@@ -45,7 +45,11 @@ public class SecurityConfiguration {
                                         "/froid-equipement/**",
                                         "/production-waste/**",
                                         "/packaging-material/**",
-                                        "/packaging-delivered/**"
+                                        "/packaging-delivered/**",
+                                        "/water-supply/**",
+                                        "/raw-materials/**"
+
+
 
 
                                 ).permitAll()
