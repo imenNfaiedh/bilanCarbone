@@ -22,4 +22,8 @@ public class FroidEquipement {
     private Double rechargesKg;
     private Integer nbInterventions;
     private String sourceDonnees;
+
+    @ManyToOne
+    @JoinColumn(name = "company_id")
+    private Company company;
 }

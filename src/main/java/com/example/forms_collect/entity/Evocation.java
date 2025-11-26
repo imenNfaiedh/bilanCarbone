@@ -32,5 +32,9 @@ public class Evocation {
 
     @Column(columnDefinition = "TEXT")
     private String project;
+
+    @ManyToOne
+    @JoinColumn(name = "company_id")
+    private Company company;
 }
 

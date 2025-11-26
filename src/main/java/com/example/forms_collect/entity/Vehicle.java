@@ -28,4 +28,8 @@ public class Vehicle {
 
     @OneToMany(mappedBy = "vehicle", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<VehicleMonthlyData> monthlyData = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "company_id")
+    private Company company;
 }

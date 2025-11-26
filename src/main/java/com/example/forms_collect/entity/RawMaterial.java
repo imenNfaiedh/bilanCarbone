@@ -23,4 +23,8 @@ public class RawMaterial {
     private String method;
 
     // 3.7 A. Matières premières (hors eau)
+
+    @ManyToOne
+    @JoinColumn(name = "company_id")
+    private Company company;
 }

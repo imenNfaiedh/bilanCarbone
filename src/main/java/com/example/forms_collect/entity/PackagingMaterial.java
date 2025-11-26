@@ -1,9 +1,6 @@
 package com.example.forms_collect.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,4 +19,8 @@ public class PackagingMaterial {
     private Double quantiteTonne;
 
     private String destination; // recyclage, incinération,
+
+    @ManyToOne
+    @JoinColumn(name = "company_id")
+    private Company company;
 }

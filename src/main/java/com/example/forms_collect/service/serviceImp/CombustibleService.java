@@ -31,7 +31,7 @@ public class CombustibleService implements ICombustibleService {
     @Transactional
     public CombustibleDto saveCombustible(CombustibleDto combustibleDto) {
 
-        // 1) Convertir DTO → Entité
+
         Combustible combustible = combustibleMapper.toEntity(combustibleDto);
 
         // 2) Gérer les données mensuelles

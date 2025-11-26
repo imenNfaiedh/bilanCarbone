@@ -26,4 +26,7 @@ public class Combustible {
     @OneToMany(mappedBy = "combustible", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<MonthlyData> donneesMensuelles=new ArrayList<>();
 
+    @ManyToOne
+    @JoinColumn(name = "company_id")
+    private Company company;
 }

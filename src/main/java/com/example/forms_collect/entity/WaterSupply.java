@@ -21,5 +21,8 @@ public class WaterSupply {
     private String acquisitionMethod;
     private String discharge;
     private Boolean monthlyTracking;
+    @ManyToOne
+    @JoinColumn(name = "company_id")
+    private Company company;
 
 }
