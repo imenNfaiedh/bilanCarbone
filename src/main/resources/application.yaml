@@ -6,7 +6,7 @@ spring:
     driver-class-name: org.postgresql.Driver
     username: postgres
     url: jdbc:postgresql://localhost:5432/forms-collect
-    password: '0000'
+    password: 'admin'
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:

@@ -6,8 +6,13 @@ import com.example.forms_collect.enumeration.UserRole;
 import com.example.forms_collect.repository.IUserRepository;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @Service
 public class AuthenticationService {
@@ -47,22 +52,24 @@ public class AuthenticationService {
     /**
      * LOGIN + JWT TOKEN
      */
-    public String authenticate(LoginUserDto input) {
-
-        // Vérifie email + password
-        authenticationManager.authenticate(
+    public Map<String, Object> authenticate(LoginUserDto input) {
+        Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(
-                        input.getEmail(), input.getPassword()
+                        input.getEmail(),
+                        input.getPassword()
                 )
         );
 
-        // Récupère user
-        User user = userRepository.findByEmail(input.getEmail())
-                .orElseThrow(() -> new RuntimeException("User not found"));
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        User user = (User) authentication.getPrincipal();
 
+        String token = jwtService.generateToken(user);
 
-        return jwtService.generateToken(user);
-    }
-}
+        Map<String, Object> result = new HashMap<>();
+        result.put("token", token);
+        result.put("user", user);
+
+        return result;
+    }}
 
 

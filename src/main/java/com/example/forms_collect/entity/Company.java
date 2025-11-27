@@ -37,5 +37,7 @@ public class Company {
 
     @Column(name = "manager")
     private String manager;
-
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "category_company_id") // ou "category_id" selon votre choix
+    private CategoryCompany categoryCompany;
 }

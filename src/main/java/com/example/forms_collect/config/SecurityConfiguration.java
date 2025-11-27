@@ -47,7 +47,8 @@ public class SecurityConfiguration {
                                         "/packaging-material/**",
                                         "/packaging-delivered/**",
                                         "/water-supply/**",
-                                        "/raw-materials/**"
+                                        "/raw-materials/**",
+                                        "/api/categories/**"
 
 
 
